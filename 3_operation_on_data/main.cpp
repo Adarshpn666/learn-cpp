@@ -250,7 +250,7 @@ int main()
     char a3{21};
     char a4{12};
 
-    std::cout << "Size of short : " << sizeof(a1) << std::endl; //2
+    std::cout << "Size of short : " << sizeof(a1) << std::endl;
     std::cout << "Size of short : " << sizeof(a2) << std::endl; //2
     std::cout << "Size of char : " << sizeof(a3) << std::endl; //1
     std::cout << "Size of char : " << sizeof(a4) << std::endl; //1
