@@ -128,6 +128,8 @@ int main()
     // through constinit we can initialize the var at compile time.
     // constinit can be only applied to variables with static or thread storage else outside main function.
     // constinit int constinit_var_6{24}; //this will throw error since constinit inside main is neither static nor thread storage.
+    // Note : thread storage means the data that is only term used to refer to data that is seemingly global or static storage duration
+    //(from the viewpoint of the functions using it) but, in actual fact, there is one copy per thread
 
     std::cout << "const_var_2 value  : " << const_var_2 << std::endl;
     std::cout << "constexpr_var_6 value  : " << constexpr_var_6 << std::endl;
