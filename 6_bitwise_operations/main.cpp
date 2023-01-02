@@ -87,8 +87,26 @@ int main()
     std::cout << std::setw(COLUMN_WIDTH) << "(value_1 ^ value_2) : " << std::bitset<8>(value_1 ^ value_2) << std::endl;
     std::cout << std::endl;
 
+    std::cout << std::endl
+              << "Compound bitwise and assignment operators----------------------------------------------------------------------------------------------------------> " << std::endl;
 
-    
+    /*
+        >>= , <<=, |=, &=, ^=
+    */
+
+    unsigned char test_value_1{0b00001100};
+
+    std::cout << std::setw(COLUMN_WIDTH) << "value before any operations:" << std::setw(COLUMN_WIDTH) << std::bitset<8>(test_value_1) << std::endl;
+    test_value_1 &= 0b00001111;
+    std::cout << std::setw(COLUMN_WIDTH) << "compound AND operator:" << std::setw(COLUMN_WIDTH) << std::bitset<8>(test_value_1) << std::endl;
+    test_value_1 |= 0b00001111;
+    std::cout << std::setw(COLUMN_WIDTH) << "compound OR operator:" << std::setw(COLUMN_WIDTH) << std::bitset<8>(test_value_1) << std::endl;
+    test_value_1 ^= 0b10101101;
+    std::cout << std::setw(COLUMN_WIDTH) << "compound XOR operator:" << std::setw(COLUMN_WIDTH) << std::bitset<8>(test_value_1) << std::endl;
+    test_value_1 <<= 2;
+    std::cout << std::setw(COLUMN_WIDTH) << "compound left shift operator:" << std::setw(COLUMN_WIDTH) << std::bitset<8>(test_value_1) << std::endl;
+    test_value_1 >>= 2;
+    std::cout << std::setw(COLUMN_WIDTH) << "compound right shift operator:" << std::setw(COLUMN_WIDTH) << std::bitset<8>(test_value_1) << std::endl;
 
     return 0;
 }
