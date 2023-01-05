@@ -108,5 +108,31 @@ int main()
     test_value_1 >>= 2;
     std::cout << std::setw(COLUMN_WIDTH) << "compound right shift operator:" << std::setw(COLUMN_WIDTH) << std::bitset<8>(test_value_1) << std::endl;
 
+    std::cout << std::endl
+              << "Bitwise MASK----------------------------------------------------------------------------------------------------------> " << std::endl;
+    
+    /*
+        Mask is way to highlight or shadow bits in a byte.
+        lets say we want an 5th bit in bin {00011000}
+        we can do --> 
+            bin : 00011000
+           mask : 00010000  by this way we can mask 5th position in bin.
+
+        lets create mask for different position.
+    */
+    unsigned char mask_0 {0b00000001}; //at pos 1
+    unsigned char mask_1 {0b00000010}; //at pos 2
+    unsigned char mask_2 {0b00000100}; //at pos 3
+    unsigned char mask_3 {0b00001000}; //at pos 4
+    unsigned char mask_4 {0b00010000}; //at pos 5
+    unsigned char mask_5 {0b00100000}; //at pos 6
+    unsigned char mask_6 {0b01000000}; //at pos 7
+    unsigned char mask_7 {0b10000000}; //at pos 8
+
+
+    
+
+
+
     return 0;
 }
