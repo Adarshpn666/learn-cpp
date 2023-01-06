@@ -110,29 +110,52 @@ int main()
 
     std::cout << std::endl
               << "Bitwise MASK----------------------------------------------------------------------------------------------------------> " << std::endl;
-    
+
     /*
         Mask is way to highlight or shadow bits in a byte.
         lets say we want an 5th bit in bin {00011000}
-        we can do --> 
+        we can do -->
             bin : 00011000
            mask : 00010000  by this way we can mask 5th position in bin.
 
         lets create mask for different position.
     */
-    unsigned char mask_0 {0b00000001}; //at pos 1
-    unsigned char mask_1 {0b00000010}; //at pos 2
-    unsigned char mask_2 {0b00000100}; //at pos 3
-    unsigned char mask_3 {0b00001000}; //at pos 4
-    unsigned char mask_4 {0b00010000}; //at pos 5
-    unsigned char mask_5 {0b00100000}; //at pos 6
-    unsigned char mask_6 {0b01000000}; //at pos 7
-    unsigned char mask_7 {0b10000000}; //at pos 8
+    const unsigned char mask_0{0b00000001}; // at pos 1
+    const unsigned char mask_1{0b00000010}; // at pos 2
+    const unsigned char mask_2{0b00000100}; // at pos 3
+    const unsigned char mask_3{0b00001000}; // at pos 4
+    const unsigned char mask_4{0b00010000}; // at pos 5
+    const unsigned char mask_5{0b00100000}; // at pos 6
+    const unsigned char mask_6{0b01000000}; // at pos 7
+    const unsigned char mask_7{0b10000000}; // at pos 8
 
+    unsigned data_1{0b00100100};
+    unsigned data_2{0b00100110};
+    unsigned data_3{0b00100110};
+    unsigned data_4{0b00100110};
 
-    
+    /**
+     * we do multiple operations using the bit mask
+     *
+     * 1 setting bit --> setting value to 1
+     * 2 resetting bit --> setting value to 0
+     * 3 checking the bit
+     * 4 toggle the bit --> flipping bit value.
+     */
 
+    // setting bit value at pos 2
+    std::cout << "Setting bit :" << std::endl;
+    std::cout << std::setw(COLUMN_WIDTH) << "data :" << std::setw(COLUMN_WIDTH) << std::bitset<8>(data_1) << std::endl;
+    data_1 |= mask_1;
+    std::cout << std::setw(COLUMN_WIDTH) << "mask :" << std::setw(COLUMN_WIDTH) << std::bitset<8>(mask_1) << std::endl;
+    std::cout << std::setw(COLUMN_WIDTH) << "result :" << std::setw(COLUMN_WIDTH) << std::bitset<8>(data_1) << std::endl;
 
+    // resetting bit value at pos 2
+    std::cout << "Resetting bit :" << std::endl;
+    std::cout << std::setw(COLUMN_WIDTH) << "data :" << std::setw(COLUMN_WIDTH) << std::bitset<8>(data_2) << std::endl;
+    data_2 &= (~mask_1);
+    std::cout << std::setw(COLUMN_WIDTH) << "mask :" << std::setw(COLUMN_WIDTH) << std::bitset<8>(mask_1) << std::endl;
+    std::cout << std::setw(COLUMN_WIDTH) << "result :" << std::setw(COLUMN_WIDTH) << std::bitset<8>(data_2) << std::endl;
 
     return 0;
 }
