@@ -157,5 +157,20 @@ int main()
     std::cout << std::setw(COLUMN_WIDTH) << "mask :" << std::setw(COLUMN_WIDTH) << std::bitset<8>(mask_1) << std::endl;
     std::cout << std::setw(COLUMN_WIDTH) << "result :" << std::setw(COLUMN_WIDTH) << std::bitset<8>(data_2) << std::endl;
 
+    // checking bit at pos 5
+    std::cout << "Checking bit at pos 5 :" << std::endl;
+    std::cout << std::setw(COLUMN_WIDTH) << "data :" << std::setw(COLUMN_WIDTH) << std::bitset<8>(data_3) << std::endl;
+    data_3 &= mask_5;
+    bool check_bit = data_3 >> 5; // right shift
+    std::cout << std::setw(COLUMN_WIDTH) << "mask :" << std::setw(COLUMN_WIDTH) << std::bitset<8>(mask_5) << std::endl;
+    std::cout << std::setw(COLUMN_WIDTH) << "result :" << std::setw(COLUMN_WIDTH) << check_bit << std::endl;
+
+    // toggling bit at pos 5
+    std::cout << "Checking bit at pos 5 :" << std::endl;
+    std::cout << std::setw(COLUMN_WIDTH) << "data :" << std::setw(COLUMN_WIDTH) << std::bitset<8>(data_4) << std::endl;
+    data_4 ^= mask_5;
+    std::cout << std::setw(COLUMN_WIDTH) << "mask :" << std::setw(COLUMN_WIDTH) << std::bitset<8>(mask_5) << std::endl;
+    std::cout << std::setw(COLUMN_WIDTH) << "result :" << std::setw(COLUMN_WIDTH) << std::bitset<8>(data_4) << std::endl;
+
     return 0;
 }
