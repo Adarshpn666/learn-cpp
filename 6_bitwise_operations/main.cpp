@@ -172,5 +172,43 @@ int main()
     std::cout << std::setw(COLUMN_WIDTH) << "mask :" << std::setw(COLUMN_WIDTH) << std::bitset<8>(mask_5) << std::endl;
     std::cout << std::setw(COLUMN_WIDTH) << "result :" << std::setw(COLUMN_WIDTH) << std::bitset<8>(data_4) << std::endl;
 
+    std::cout << std::endl
+              << "Packing Color information using mask----------------------------------------------------------------------------------------------------------> " << std::endl;
+
+    /*
+        every color is made up of rgba range from(0 to 255)
+        r->red
+        g->green
+        b->blue
+        a->alpha (transparency)
+        these rgba has fix value for each we can use these value and some bit operations to find the amount value of rgba in any given color
+    */
+    const unsigned int red_mask{0xff000000};
+    const unsigned int green_mask{0x00ff0000};
+    const unsigned int blue_mask{0x0000ff00};
+    const unsigned int alpha_mask{0x000000ff};
+
+    // some random color
+    unsigned int my_color{0xabccde00};
+
+    // lets find that random colors value
+    std::cout << std::hex << std::showbase;
+    std::cout << "My color :" << my_color << std::endl;
+    std::cout << "Amount of Red : " << ((my_color & red_mask) >> 24) << std::endl;
+    std::cout << "Amount of green : " << ((my_color & green_mask) >> 16) << std::endl;
+    std::cout << "Amount of blue : " << ((my_color & blue_mask) >> 8) << std::endl;
+    std::cout << "Amount of alpha : " << ((my_color & alpha_mask) >> 0) << std::endl;
+
+    /**
+     * since unsigned int is size of 32 bit that means each rgba gets 8 bits
+     * inorder to find the data we need to do AND operation then right shift operation
+     * so to find,
+     * red we need to shift -> 24 bits
+     * green we need to shift -> 16 bits
+     * blue we need to shift -> 8 bits
+     * alpha we need to shift -> 0 bit
+     *
+     */
+
     return 0;
 }
