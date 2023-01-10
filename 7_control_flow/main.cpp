@@ -90,6 +90,27 @@ int main()
     {
         std::cout << "square tool is activated " << std::endl;
     }
+    
+    //switch case
+    std::cout<<"Switch Case : ...................."<<std::endl;
+    
+    switch(tool){
+        case pen:{
+            std::cout << "pen tool is activated " << std::endl;
+        }
+        break;
+        case marker:{
+            std::cout << "pen tool is activated " << std::endl;
+        }
+        break;
+        case sketch:{
+            std::cout << "pen tool is activated " << std::endl;
+        }
+        break;
+        default:{
+            std::cout<<"No match found!"<<std::endl;
+        }
+    }
 
     return 0;
 }
