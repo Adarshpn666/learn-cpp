@@ -52,13 +52,14 @@ int main()
     // else statements
     std::cout << "else if statements ........." << std::endl;
     // tools
-    int pen{10};
-    int marker{20};
-    int sketch{30};
-    int pencil{40};
-    int rectangle{50};
-    int circle{60};
-    int square{70};
+    // we are using const for switch case.
+    const int pen{10};
+    const int marker{20};
+    const int sketch{30};
+    const int pencil{40};
+    const int rectangle{50};
+    const int circle{60};
+    const int square{70};
 
     int tool{marker};
 
@@ -90,27 +91,88 @@ int main()
     {
         std::cout << "square tool is activated " << std::endl;
     }
-    
-    //switch case
-    std::cout<<"Switch Case : ...................."<<std::endl;
-    
-    switch(tool){
-        case pen:{
-            std::cout << "pen tool is activated " << std::endl;
-        }
-        break;
-        case marker:{
-            std::cout << "pen tool is activated " << std::endl;
-        }
-        break;
-        case sketch:{
-            std::cout << "pen tool is activated " << std::endl;
-        }
-        break;
-        default:{
-            std::cout<<"No match found!"<<std::endl;
-        }
+
+    // switch case
+    /**
+     * @brief
+     * switch case can be only value in integer value and enum ex: int, long, unsigned int etc....
+     * The case statements require integral value which must be known at compile-time,
+     * which is what is meant by constant here. But the const members of a class are not really
+     * constant in that sense. They're are simply read-only.
+     *
+     */
+    std::cout << "Switch Case : ...................." << std::endl;
+
+    switch (tool)
+    {
+    case pen:
+    {
+        std::cout << "pen tool is activated " << std::endl;
     }
+    break;
+    case marker:
+    {
+        std::cout << "marker tool is activated " << std::endl;
+    }
+    break;
+    case sketch:
+    {
+        std::cout << "sketch tool is activated " << std::endl;
+    }
+    break;
+    default:
+    {
+        std::cout << "No match found!" << std::endl;
+    }
+    }
+
+    // what  would happen if we remove the break statement from the switch.
+    // it will excute all the statement after where the condition is satisfied
+    std::cout << "Switch Case without break : ...................." << std::endl;
+
+    switch (tool)
+    {
+    case pen:
+    {
+        std::cout << "pen tool is activated " << std::endl;
+    }
+
+    case marker:
+    {
+        std::cout << "marker tool is activated " << std::endl;
+    }
+
+    case sketch:
+    {
+        std::cout << "sketch tool is activated " << std::endl;
+    }
+
+    default:
+    {
+        std::cout << "No match found!" << std::endl;
+    }
+    }
+
+    std::cout << std::endl
+              << "Short Circuit Evaluations ----------------------------------------------------------------------------------------------------------> " << std::endl;
+
+    std::cout << std::endl
+              << "Integral Logic Conditions ----------------------------------------------------------------------------------------------------------> " << std::endl;
+
+    std::cout << std::endl
+              << "Ternary Operators ----------------------------------------------------------------------------------------------------------> " << std::endl;
+
+    std::cout << std::endl
+              << "If constexpr ----------------------------------------------------------------------------------------------------------> " << std::endl;
+
+    std::cout << std::endl
+              << "If with Initializer ----------------------------------------------------------------------------------------------------------> " << std::endl;
+    std::cout << std::endl
+              << "Switch with Initializer ----------------------------------------------------------------------------------------------------------> " << std::endl;
+    std::cout << std::endl
+              << "Variable Scope Revisited ----------------------------------------------------------------------------------------------------------> " << std::endl;
+    std::cout << std::endl
+              << "Switch Scope ----------------------------------------------------------------------------------------------------------> " << std::endl;
 
     return 0;
 }
